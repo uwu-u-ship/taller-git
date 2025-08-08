@@ -1,6 +1,6 @@
 const readline = require('readline');
 
-// Para colorear texto en la terminal
+
 const colores = {
   reset: "\x1b[0m",
   rojo: "\x1b[31m",
@@ -56,3 +56,4 @@ function preguntar() {
 }
 
 preguntar();
+console.log("Probando cambios para Git ✨");
