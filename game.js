@@ -58,5 +58,6 @@ function preguntar() {
 preguntar();
 console.log("Probando cambios para Git ✨");
 console.log("wenas");
-console.log ("patata")
-console.log ("tengo sueño")
+console.log ("patata");
+console.log ("tengo sueño");
+console.log ("rito gomes no sabe hacer juegos")
