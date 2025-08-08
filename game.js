@@ -1,6 +1,5 @@
 const readline = require('readline');
 
-
 const colores = {
   reset: "\x1b[0m",
   rojo: "\x1b[31m",
@@ -17,9 +16,10 @@ const rl = readline.createInterface({
 const numeroSecreto = Math.floor(Math.random() * 100) + 1;
 const maxIntentos = 7;
 let intentos = 0;
+let historialIntentos = []; // ← NUEVO
 
 console.log(`${colores.azul}¡Bienvenido al juego de Adivina el Número!${colores.reset}`);
-console.log(`Estoy pensando en un número entre 1 y 100. Tienes ${maxIntentos} intentos.`);
+console.log(`Estoy pensando en un número entre 1 y 100. Tienes ${maxIntentos} intentos weY.`);
 
 function pista(diferencia) {
   if (diferencia === 0) return "¡Correcto!";
@@ -39,6 +39,8 @@ function preguntar() {
     }
 
     intentos++;
+    historialIntentos.push(intento); 
+    console.log(`Has intentado: ${historialIntentos.join(', ')}`); 
 
     const diferencia = Math.abs(numeroSecreto - intento);
 
@@ -47,6 +49,8 @@ function preguntar() {
       rl.close();
     } else if (intentos < maxIntentos) {
       console.log(pista(diferencia));
+        console.log(`Te quedan ${maxIntentos - intentos} intento(s).`)
+
       preguntar();
     } else {
       console.log(`${colores.rojo} Se acabaron tus intentos. El número era ${numeroSecreto}.${colores.reset}`);
@@ -56,8 +60,11 @@ function preguntar() {
 }
 
 preguntar();
+
+// Mensajes de prueba para Git (puedes eliminarlos si quieres)
 console.log("Probando cambios para Git ✨");
 console.log("wenas");
-console.log ("patata");
-console.log ("tengo sueño");
-console.log ("rito gomes no sabe hacer juegos")
+console.log("patata");
+console.log("tengo sueño");
+console.log("rito gomes no sabe hacer juegos");
+console.log("beltro necesita novia");
